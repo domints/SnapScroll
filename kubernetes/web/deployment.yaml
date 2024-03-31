@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: snapscroll-vue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snapscroll-vue
+  template:
+    metadata:
+      labels:
+        app: snapscroll-vue
+        app.kubernetes.io/name: snapscroll-vue
+    spec:
+      containers:
+      - name: snapscroll-vue-container
+        image: ghcr.io/domints/repeaters.net-vue:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+      nodeSelector:
+        kubernetes.io/arch: amd64

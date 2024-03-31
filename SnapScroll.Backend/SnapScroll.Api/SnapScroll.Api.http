@@ -1,0 +1,6 @@
+@SnapScroll.Api_HostAddress = http://localhost:5069
+
+GET {{SnapScroll.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
