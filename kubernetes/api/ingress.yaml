@@ -8,7 +8,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.middlewares: default-redirect-https@kubernetescrd
 spec:
   rules:
-  - host: snapscroll.dszymanski.pl
+  - host: photos.dszymanski.pl
     http:
       paths:
       - path: /api
@@ -29,4 +29,4 @@ spec:
   tls:
     - secretName: snapscroll-tls
       hosts:
-        - snapscroll.dszymanski.pl
+        - photos.dszymanski.pl
