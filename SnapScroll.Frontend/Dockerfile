@@ -1,4 +1,5 @@
-FROM node:20.12.0-alpine3.19
+#FROM node:20.12.0-alpine3.19
+FROM gcr.io/distroless/nodejs20-debian12
 ARG PORT=3000
 ENV PORT=$PORT
 ENV NODE_ENV=production
@@ -10,4 +11,4 @@ COPY ./.output /src/.output
 # COPY ./node_modules /srcś/node_modules
 
 EXPOSE $PORT/tcp
-CMD [ "node", ".output/server/index.mjs" ]
+CMD [ ".output/server/index.mjs" ]
